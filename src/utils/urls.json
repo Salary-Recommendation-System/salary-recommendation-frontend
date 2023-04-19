@@ -1,0 +1,5 @@
+{
+  "save_salary_base": "api/v1/save_info?saved_existing_data=FALSE",
+  "get_recommendation": "api/v1/get_recommendation",
+  "update_rating": "/api/v1/rating/"
+}

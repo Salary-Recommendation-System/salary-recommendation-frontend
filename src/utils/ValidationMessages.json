@@ -1,0 +1,9 @@
+{
+  "designationErrorMessage": "Please select the Designation",
+  "educationErrorMessage": "Please select an Education",
+  "workExperienceErrorMessage": "Please select the level of experience",
+  "noOfEmployeesErrorMessage": "Please specify the company size",
+  "salaryAmountErrorMessage": "Please enter the Salary",
+  "userRatingErrorMessage": "Please specify the rating for the salary specified",
+  "yearOfPayErrorMessage": "Please indicate the year for the salary entered"
+}
