@@ -14,6 +14,7 @@ import {
 } from "../Common/CommonInfo";
 import Modal from "../../DialogBox/Modal";
 import CustomLoader from "../../Loader/CustomLoader";
+import { useEffect } from "react";
 
 const InformationUserForm = () => {
   const [designation, setDesignation] = useState("");

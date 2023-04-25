@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   designationOptions,
   workExperienceOptions,
@@ -8,7 +9,6 @@ import {
 import "./RecommendationForm.css";
 import { MainUser } from "../../../models/MainUser";
 import { GET_RECOMMENDATION } from "../../../service/Endpoints";
-import { useHistory } from "react-router-dom";
 import Modal from "../../DialogBox/Modal";
 import CustomLoader from "../../Loader/CustomLoader";
 
@@ -37,7 +37,6 @@ const RecommendationForm = () => {
     }
     getRecommendation();
   };
-
   const getRecommendation = async () => {
     const user = new MainUser(
       education,

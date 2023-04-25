@@ -19,7 +19,7 @@ const SalaryCard = ({
   const [isEditingRating, setIsEditingRating] = useState(false);
   const [selectedRating, setSelectedRating] = useState(rating);
   const [isLoading, setIsLoading] = useState(false);
-  const [modelMessage, setModelMessage] = useState("");
+  const [modelMessage, setModelMessage] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleShowModal = (message) => {
@@ -32,12 +32,17 @@ const SalaryCard = ({
   };
 
   const updateRating = async (id) => {
-    const { update } = await UPDATE_RATING(id, selectedRating);
-    if (update) {
-      handleShowModal(update._Response__message);
+    try {
+      const { data } = await UPDATE_RATING(id, selectedRating);
+      if (data) {
+        setIsLoading(false);
+        handleShowModal(data._Response__message);
+        setSelectedRating(selectedRating);
+      }
+    } catch (error) {
+      handleShowModal(error);
       setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   const handleEditClick = () => {
@@ -90,7 +95,7 @@ const SalaryCard = ({
           <div className="salary-card-label">Rating:</div>
           {!isEditingRating ? (
             <div className="salary-card-value rating-container">
-              {rating}
+              {selectedRating ? selectedRating : rating}
               <span className="edit-icon" onClick={handleEditClick}>
                 <EditIcon fontSize="small" className="editing-button" />
               </span>
