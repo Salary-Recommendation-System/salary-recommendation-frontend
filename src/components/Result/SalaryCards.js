@@ -15,6 +15,8 @@ const SalaryCards = ({ salaryInfo }) => {
           rating={salary["user_rating"]}
           id={salary["id"]}
           year={salary["year_of_payment"]}
+          inflationRate={salary["inflation_rate"]}
+          inflationAmount={salary["inflation_amount"]}
         />
       ))}
     </div>

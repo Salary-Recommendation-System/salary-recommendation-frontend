@@ -15,6 +15,8 @@ const SalaryCard = ({
   amount,
   rating,
   year,
+  inflationRate,
+  inflationAmount,
 }) => {
   const [isEditingRating, setIsEditingRating] = useState(false);
   const [selectedRating, setSelectedRating] = useState(rating);
@@ -91,6 +93,17 @@ const SalaryCard = ({
           <div className="salary-card-label">Year of publish:</div>
           <div className="salary-card-value">{year}</div>
         </div>
+
+        <div className="salary-card-row">
+          <div className="salary-card-label">Inflation Rate:</div>
+          <div className="salary-card-value">{inflationRate}</div>
+        </div>
+
+        <div className="salary-card-row">
+          <div className="salary-card-label">Inflation amount:</div>
+          <div className="salary-card-value">{inflationAmount}</div>
+        </div>
+
         <div className="salary-card-row">
           <div className="salary-card-label">Rating:</div>
           {!isEditingRating ? (
@@ -116,6 +129,10 @@ const SalaryCard = ({
             </div>
           )}
         </div>
+        <p>
+          <b> Inflation amount:</b> Represent the Purchasing power of the slary
+          recommendation adjusted to the new inflation rate calculation
+        </p>
       </div>
       {isDialogOpen && (
         <Modal message={modelMessage} onClose={handleCloseModal} />
